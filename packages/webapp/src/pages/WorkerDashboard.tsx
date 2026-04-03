@@ -95,7 +95,6 @@ export default function WorkerDashboard({ payment, offerIntent = 'none', onBack 
 
   function handleCopilotSend() {
     setOfferMode('done')
-    setCounterSent(true)
   }
 
   const displayBalance = useCountUp(targetBalance, 1400, balanceAnimEnabled)
