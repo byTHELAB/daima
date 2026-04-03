@@ -58,7 +58,6 @@ export default function WorkerDashboard({ payment, offerIntent = 'none', onBack 
   const [showLine2, setShowLine2] = useState(false)
   const [showLine3, setShowLine3] = useState(false)
   const [showMarketAlert, setShowMarketAlert] = useState(false)
-  const [counterSent, setCounterSent] = useState(false)
   const [balanceAnimEnabled, setBalanceAnimEnabled] = useState(false)
 
   // Offer handling modes
