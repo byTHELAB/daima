@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+/* Daima Sunset Theme */
+@theme {
+  --color-bg: #FAF8F5;
+  --color-card: #FFFFFF;
+  --color-text: #1A1815;
+  --color-subtle: #8A7A6A;
+  --color-border: #E0D8CC;
+  --color-track: #EDE8E0;
+
+  --color-coral: #FF6B55;
+  --color-coral-text: #C04A1A;
+  --color-gold: #FFCD38;
+  --color-gold-text: #8A6A00;
+  --color-blue: #3B5BDB;
+  --color-green: #2DD4A0;
+  --color-green-text: #0A7A54;
+  --color-pink: #FF4D8F;
+  --color-pink-text: #B5005A;
+  --color-red: #FF3B30;
+  --color-red-text: #C0000A;
+
+  --font-family-sans: 'Space Grotesk', system-ui, sans-serif;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeSlideRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to { opacity: 1; transform: translateX(0); }
+}
