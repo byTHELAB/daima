@@ -1,0 +1,31 @@
+{
+  "name": "daima",
+  "version": "0.1.0",
+  "description": "AI CFO for remote workers in emerging economies — we make paying fair easy and getting paid fair automatic",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "echo 'Run individual packages — see packages/*'",
+    "demo": "npx ts-node scripts/demo.ts",
+    "build": "npm run build --workspaces --if-present",
+    "lint": "eslint packages/*/src/**/*.ts"
+  },
+  "keywords": [
+    "fintech",
+    "ai-agent",
+    "remote-work",
+    "bitcoin",
+    "lightning-network",
+    "solana",
+    "usdc",
+    "open-wallet-standard",
+    "emerging-markets"
+  ],
+  "author": "byTHELAB* <hello@bythelab.xyz>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

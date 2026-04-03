@@ -1,0 +1,15 @@
+{
+  "name": "@daima/worker-dashboard",
+  "version": "0.1.0",
+  "description": "Dashboard for workers to view finances and agent activity",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@daima/wallet-service": "*",
+    "@daima/worker-agent": "*"
+  }
+}

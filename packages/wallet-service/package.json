@@ -1,0 +1,11 @@
+{
+  "name": "@daima/wallet-service",
+  "version": "0.1.0",
+  "description": "OWS + Solana + Lightning wallet management",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "jest"
+  }
+}

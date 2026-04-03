@@ -1,0 +1,14 @@
+{
+  "name": "@daima/worker-agent",
+  "version": "0.1.0",
+  "description": "AI financial agent — the core brain of Daima",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@daima/wallet-service": "*"
+  }
+}
