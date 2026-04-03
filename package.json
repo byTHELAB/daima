@@ -23,7 +23,7 @@
     "open-wallet-standard",
     "emerging-markets"
   ],
-  "author": "byTHELAB* <hello@bythelab.xyz>",
+  "author": "byTHELAB* <info@bythelab.xyz>",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0"

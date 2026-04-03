@@ -1,4 +1,4 @@
-# Daima — AI CFO for the Global South
+# Daima — AI CFO for the Emerging Economies
 
 > *Daima: from the Quimbaya people of Colombia — master goldsmiths who understood the true value of what they crafted. Now, your AI agent knows the true value of your work.*
 
@@ -154,7 +154,7 @@ npm run demo
 
 ## The Bigger Vision
 
-Daima starts with payments. But the real play is **financial infrastructure for the global south**:
+Daima starts with payments. But the real play is **financial infrastructure for the emerging economies**:
 
 - Credit scoring based on international income history
 - Tax optimization by jurisdiction
