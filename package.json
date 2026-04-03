@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "dev": "echo 'Run individual packages — see packages/*'",
-    "demo": "npx ts-node scripts/demo.ts",
+    "demo": "npx ts-node --transpile-only scripts/demo.ts",
     "build": "npm run build --workspaces --if-present",
     "lint": "eslint packages/*/src/**/*.ts"
   },
