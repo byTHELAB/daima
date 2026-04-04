@@ -21,6 +21,18 @@ export default function Landing({ onNavigate }: Props) {
   return (
     <div className="min-h-screen bg-bg font-sans text-text overflow-x-hidden">
 
+      {/* ─── Top Bar ──────────────────────────────────────────────────────── */}
+      <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 py-4">
+        <span className="text-lg font-bold text-text tracking-tight">DAIMA</span>
+        <button
+          onClick={() => setShowWaitlist(true)}
+          className="px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:scale-105 active:scale-95"
+          style={{ background: '#FF6B55', boxShadow: '0 4px 16px rgba(255,107,85,0.3)' }}
+        >
+          Get Early Access
+        </button>
+      </div>
+
       {/* ─── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative flex flex-col items-center justify-center min-h-screen px-6 py-20 text-center">
 
@@ -103,14 +115,6 @@ export default function Landing({ onNavigate }: Props) {
             for remote workers & companies
           </div>
         </div>
-
-        {/* Waitlist trigger */}
-        <button
-          onClick={() => setShowWaitlist(true)}
-          className="relative mt-8 text-sm font-medium text-subtle hover:text-coral-text transition-colors"
-        >
-          Interested? Get early access →
-        </button>
 
         {/* Waitlist popup — sticker style */}
         {showWaitlist && (
