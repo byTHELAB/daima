@@ -26,8 +26,8 @@ export default function Landing({ onNavigate }: Props) {
         <span className="text-lg font-bold text-text tracking-tight">DAIMA</span>
         <button
           onClick={() => setShowWaitlist(true)}
-          className="px-5 py-2.5 rounded-xl text-sm font-bold text-white transition-all hover:scale-105 active:scale-95"
-          style={{ background: '#FF6B55', boxShadow: '0 4px 16px rgba(255,107,85,0.3)' }}
+          className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:scale-105 active:scale-95 border"
+          style={{ borderColor: '#E0D8CC', color: '#1A1815', background: '#FFFFFF' }}
         >
           Get Early Access
         </button>
@@ -128,8 +128,8 @@ export default function Landing({ onNavigate }: Props) {
               {!waitlistSent ? (
                 <>
                   <div className="text-4xl mb-3 text-center">✦</div>
-                  <h3 className="text-xl font-bold text-text text-center mb-1">Want fair pay to be the default?</h3>
-                  <p className="text-sm text-subtle text-center mb-6">Join the waitlist. We'll let you know when Daima is ready.</p>
+                  <h3 className="text-xl font-bold text-text text-center mb-1">Be part of what's next</h3>
+                  <p className="text-sm text-subtle text-center mb-6">Whether you hire or get hired — Daima is building for you.</p>
                   <form onSubmit={handleWaitlistSubmit} className="flex flex-col gap-3">
                     <input type="hidden" name="form-name" value="waitlist" />
                     <input
