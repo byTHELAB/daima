@@ -1,9 +1,15 @@
+import { useState } from 'react'
+
 interface Props {
   onNavigate: (page: string, intent?: string) => void
   onBack: () => void
 }
 
 export default function WorkerHome({ onNavigate, onBack }: Props) {
+  const [showWithdraw, setShowWithdraw] = useState(false)
+  const [withdrawOption, setWithdrawOption] = useState<string | null>(null)
+  const [withdrawSent, setWithdrawSent] = useState(false)
+
   return (
     <div className="min-h-screen bg-bg font-sans">
       <div className="max-w-md mx-auto px-4 pb-10">
@@ -64,7 +70,110 @@ export default function WorkerHome({ onNavigate, onBack }: Props) {
             </div>
           </div>
 
+          {/* Withdraw button */}
+          <div className="mt-5">
+            <button
+              onClick={() => { setShowWithdraw(!showWithdraw); setWithdrawSent(false); setWithdrawOption(null); }}
+              className="w-full py-3.5 rounded-2xl text-sm font-bold text-white transition-all hover:opacity-90 active:scale-[0.98]"
+              style={{ background: '#FF6B55' }}
+            >
+              {showWithdraw ? 'Close' : 'Withdraw'}
+            </button>
+          </div>
         </div>
+
+        {/* Withdraw Panel */}
+        {showWithdraw && (
+          <div className="bg-card border border-border rounded-2xl p-5 mb-4 shadow-sm" style={{ animation: 'fadeSlideIn 0.3s ease-out' }}>
+            {!withdrawSent ? (
+              <>
+                <p className="text-xs font-semibold text-subtle uppercase tracking-wider mb-3">Withdraw to</p>
+                <div className="flex flex-col gap-2.5 mb-4">
+                  <button
+                    onClick={() => setWithdrawOption('bank')}
+                    className="flex items-center gap-3 p-3 rounded-xl border transition-all text-left"
+                    style={{ borderColor: withdrawOption === 'bank' ? '#FF6B55' : '#E0D8CC', background: withdrawOption === 'bank' ? '#FFF5F0' : '#FFFFFF' }}
+                  >
+                    <span className="text-xl">🏦</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text">Bank account</p>
+                      <p className="text-xs text-subtle">USDC → MXN pesos • 1-2 business days</p>
+                    </div>
+                    <span className="text-xs text-subtle">Fee: 0.5%</span>
+                  </button>
+                  <button
+                    onClick={() => setWithdrawOption('crypto')}
+                    className="flex items-center gap-3 p-3 rounded-xl border transition-all text-left"
+                    style={{ borderColor: withdrawOption === 'crypto' ? '#FF6B55' : '#E0D8CC', background: withdrawOption === 'crypto' ? '#FFF5F0' : '#FFFFFF' }}
+                  >
+                    <span className="text-xl">💼</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text">Crypto wallet</p>
+                      <p className="text-xs text-subtle">USDC or BTC → your external wallet</p>
+                    </div>
+                    <span className="text-xs text-subtle">Fee: 0.3%</span>
+                  </button>
+                  <button
+                    onClick={() => setWithdrawOption('lightning')}
+                    className="flex items-center gap-3 p-3 rounded-xl border transition-all text-left"
+                    style={{ borderColor: withdrawOption === 'lightning' ? '#FF6B55' : '#E0D8CC', background: withdrawOption === 'lightning' ? '#FFF5F0' : '#FFFFFF' }}
+                  >
+                    <span className="text-xl">⚡</span>
+                    <div className="flex-1">
+                      <p className="text-sm font-semibold text-text">Lightning Network</p>
+                      <p className="text-xs text-subtle">Instant BTC transfer • any LN wallet</p>
+                    </div>
+                    <span className="text-xs" style={{ color: '#0A7A54' }}>Free</span>
+                  </button>
+                </div>
+
+                {withdrawOption && (
+                  <div style={{ animation: 'fadeSlideIn 0.3s ease-out' }}>
+                    <div className="bg-track rounded-xl p-3 mb-4" style={{ borderLeft: '3px solid #FF6B55' }}>
+                      <p className="text-xs font-semibold mb-1" style={{ color: '#C04A1A' }}>✦ Daima suggests</p>
+                      <p className="text-xs text-text leading-relaxed">
+                        {withdrawOption === 'bank' && "Keep at least $500 in USDC for upcoming expenses. You have $1,225 available. Suggested withdrawal: $700."}
+                        {withdrawOption === 'crypto' && "Your external wallet address is saved. I'll send via Solana for the lowest fee."}
+                        {withdrawOption === 'lightning' && "Lightning is instant and free. Perfect for moving to your personal BTC wallet."}
+                      </p>
+                    </div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="relative flex-1">
+                        <span className="absolute left-3 top-1/2 -translate-y-1/2 text-subtle font-semibold">$</span>
+                        <input
+                          type="number"
+                          defaultValue="700"
+                          className="w-full bg-white border rounded-xl pl-8 pr-4 py-3 text-text text-lg font-bold outline-none transition-all"
+                          style={{ borderColor: '#E0D8CC' }}
+                        />
+                      </div>
+                    </div>
+                    <button
+                      onClick={() => setWithdrawSent(true)}
+                      className="w-full py-3.5 rounded-2xl text-white font-bold text-sm transition-all active:scale-[0.98]"
+                      style={{ background: '#FF6B55' }}
+                    >
+                      Withdraw $700 →
+                    </button>
+                  </div>
+                )}
+              </>
+            ) : (
+              <div style={{ animation: 'fadeSlideIn 0.4s ease-out' }} className="text-center py-4">
+                <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl mx-auto mb-3" style={{ background: '#2DD4A0', color: '#0A0A0A' }}>✓</div>
+                <p className="text-lg font-bold text-text mb-1">Withdrawal sent!</p>
+                <p className="text-sm text-subtle mb-3">
+                  {withdrawOption === 'bank' && "$700 → your bank account (1-2 business days)"}
+                  {withdrawOption === 'crypto' && "$700 in USDC → your external wallet"}
+                  {withdrawOption === 'lightning' && "$700 in sats → your Lightning wallet (instant)"}
+                </p>
+                <p className="text-xs" style={{ color: '#0A7A54' }}>
+                  Fee: {withdrawOption === 'lightning' ? '$0.00' : withdrawOption === 'crypto' ? '$2.10 (0.3%)' : '$3.50 (0.5%)'}
+                </p>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* ── New Offer Notification (TOP PRIORITY) ─────────────── */}
         <div
