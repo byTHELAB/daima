@@ -377,6 +377,48 @@ async function moment3() {
   print('');
 }
 
+// ─── Real AIEngine Call ───────────────────────────────────────────────────────
+
+async function runRealEngine() {
+  printSection('REAL ENGINE  ·  AIEngine Running Live');
+
+  print(`  ${dim('Instantiating AIEngine and calling generatePaymentNotification...')}`);
+  print('');
+
+  // Inline the types so we don't need a complex import path from scripts/
+  const { AIEngine } = await import('../packages/worker-agent/src/ai-engine');
+
+  const engine = new AIEngine();
+
+  const payment = {
+    id: 'demo-1',
+    fromCompany: 'Acme Corp',
+    toWorker: 'daniela',
+    amountUSD: 500,
+    status: 'distributed' as const,
+    distributions: [],
+    timestamp: new Date(),
+  };
+
+  const distributions = [
+    { category: 'expenses'   as const, amount: 250, destination: 'usdc'         as const },
+    { category: 'savings'    as const, amount: 200, destination: 'btc_lightning' as const },
+    { category: 'investment' as const, amount:  50, destination: 'btc_onchain'  as const },
+  ];
+
+  await spinner('AIEngine.generatePaymentNotification()...', 1200);
+
+  const result = await engine.generatePaymentNotification(payment, distributions);
+
+  print('');
+  print(`  ${bold('Output from real AIEngine:')}`);
+  print('');
+  print(`  ${g('→')} ${result.message.substring(0, 120)}${result.message.length > 120 ? '...' : ''}`);
+  print('');
+  print(`  ${dim('type:')} ${result.type}  ${dim('timestamp:')} ${result.timestamp.toISOString()}`);
+  print('');
+}
+
 // ─── Summary ─────────────────────────────────────────────────────────────────
 
 async function printSummary() {
@@ -432,6 +474,9 @@ async function main() {
   await sleep(1000);
 
   await moment3();
+  await sleep(1000);
+
+  await runRealEngine();
   await sleep(1000);
 
   await printSummary();

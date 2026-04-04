@@ -208,7 +208,7 @@ if (require.main === module) {
     role: 'Frontend Developer',
     experienceYears: 4,
     region: 'LATAM',
-    walletAddress: 'DaimaXx7vFakeWallet1111111111111111111111111',
+    walletAddress: 'DmaAi7t7RKHK4fDkYa3bPHb6qoU4XmhRwVRz8suzPcE',
     lightningAddress: 'demo@getalby.com',
     savingsGoalMonthly: 500,
     currentSavings: 320,

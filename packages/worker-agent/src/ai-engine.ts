@@ -1,7 +1,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 // Daima Worker Agent — AI Engine
 //
-// Wraps MiniMax M2.5 API to generate natural-language notifications and advice.
+// Wraps MiniMax-M1 API to generate natural-language notifications and advice.
 // Falls back to polished hardcoded responses when the API key is missing,
 // so the demo always runs even without credentials.
 // ─────────────────────────────────────────────────────────────────────────────
@@ -24,7 +24,7 @@ export class AIEngine {
         '[AIEngine] MINIMAX_API_KEY not set — running in demo mode with hardcoded responses.'
       );
     } else {
-      console.log('[AIEngine] MiniMax M2.5 ready.');
+      console.log('[AIEngine] MiniMax-M1 ready.');
     }
   }
 

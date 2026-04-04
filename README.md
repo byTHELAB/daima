@@ -90,7 +90,7 @@ Options:
 | **Payments** | Solana + USDC | Fast, cheap payment rails (< $0.01 fee) |
 | **Savings** | Bitcoin + Lightning (LNbits) | Store of value + instant BTC transfers |
 | **Onramp** | MoonPay | Fiat → USDC (zero fees for stablecoins) |
-| **AI Agent** | MiniMax M2.5 | Financial intelligence + negotiation |
+| **AI Agent** | MiniMax-M1 | Financial intelligence + negotiation |
 | **Policy Engine** | OWS Policies | Spending limits, chain allowlists — agent can't overspend |
 
 ## OWS Integration
@@ -153,8 +153,8 @@ daima/
 ├── README.md
 ├── packages/
 │   ├── worker-agent/       → AI financial agent (core)
-│   ├── company-dashboard/  → UI for companies to pay
-│   ├── worker-dashboard/   → UI for workers to manage
+│   ├── company-dashboard/  → UI for companies to pay (v2 — see packages/webapp for current UI)
+│   ├── worker-dashboard/   → UI for workers to manage (v2 — see packages/webapp for current UI)
 │   └── wallet-service/     → OWS + Solana + Lightning
 ├── scripts/
 │   └── demo.ts             → End-to-end demo script
@@ -178,6 +178,14 @@ cp .env.example .env
 # Fill in your API keys
 
 # Run demo
+npm run demo
+```
+
+## CLI Demo
+
+The CLI demo showcases the 3 Magic Moments with animated terminal output. It runs without API keys using built-in fallback responses.
+
+```bash
 npm run demo
 ```
 
