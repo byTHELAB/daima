@@ -1,8 +1,23 @@
+import { useState } from 'react'
+
 interface Props {
   onNavigate: (page: 'landing' | 'company' | 'worker') => void
 }
 
 export default function Landing({ onNavigate }: Props) {
+  const [showWaitlist, setShowWaitlist] = useState(false)
+  const [waitlistEmail, setWaitlistEmail] = useState('')
+  const [waitlistSent, setWaitlistSent] = useState(false)
+
+  function handleWaitlistSubmit(e: React.FormEvent) {
+    e.preventDefault()
+    if (!waitlistEmail) return
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ 'form-name': 'waitlist', email: waitlistEmail }).toString(),
+    }).then(() => setWaitlistSent(true)).catch(() => setWaitlistSent(true))
+  }
   return (
     <div className="min-h-screen bg-bg font-sans text-text overflow-x-hidden">
 
@@ -88,6 +103,67 @@ export default function Landing({ onNavigate }: Props) {
             for remote workers & companies
           </div>
         </div>
+
+        {/* Waitlist trigger */}
+        <button
+          onClick={() => setShowWaitlist(true)}
+          className="relative mt-8 text-sm font-medium text-subtle hover:text-coral-text transition-colors"
+        >
+          Interested? Get early access →
+        </button>
+
+        {/* Waitlist popup — sticker style */}
+        {showWaitlist && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center px-4" onClick={() => setShowWaitlist(false)}>
+            <div className="absolute inset-0 bg-black/30 backdrop-blur-sm" />
+            <div
+              className="relative bg-card rounded-3xl p-8 max-w-sm w-full shadow-2xl border border-border"
+              style={{ animation: 'fadeSlideIn 0.3s ease-out', transform: 'rotate(-1deg)' }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              {!waitlistSent ? (
+                <>
+                  <div className="text-4xl mb-3 text-center">✦</div>
+                  <h3 className="text-xl font-bold text-text text-center mb-1">Want fair pay to be the default?</h3>
+                  <p className="text-sm text-subtle text-center mb-6">Join the waitlist. We'll let you know when Daima is ready.</p>
+                  <form onSubmit={handleWaitlistSubmit} className="flex flex-col gap-3">
+                    <input type="hidden" name="form-name" value="waitlist" />
+                    <input
+                      type="email"
+                      name="email"
+                      required
+                      value={waitlistEmail}
+                      onChange={(e) => setWaitlistEmail(e.target.value)}
+                      placeholder="your@email.com"
+                      className="px-5 py-4 rounded-2xl bg-bg border border-border text-text text-sm font-medium outline-none focus:border-coral transition-all"
+                    />
+                    <button
+                      type="submit"
+                      className="px-8 py-4 rounded-2xl text-white font-bold text-sm transition-all hover:scale-105 active:scale-95"
+                      style={{ background: '#FF6B55', boxShadow: '0 8px 24px rgba(255,107,85,0.35)' }}
+                    >
+                      Count me in →
+                    </button>
+                  </form>
+                  <p className="text-xs text-subtle text-center mt-3">No spam, ever.</p>
+                </>
+              ) : (
+                <div className="text-center py-4" style={{ animation: 'fadeSlideIn 0.3s ease-out' }}>
+                  <div className="text-5xl mb-3">🎉</div>
+                  <h3 className="text-xl font-bold text-text mb-2">You're on the list!</h3>
+                  <p className="text-sm text-subtle mb-4">We'll reach out when Daima is ready for you.</p>
+                  <button
+                    onClick={() => setShowWaitlist(false)}
+                    className="text-sm font-medium"
+                    style={{ color: '#C04A1A' }}
+                  >
+                    Back to the demo →
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* Scroll hint */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-subtle text-xs animate-bounce">
