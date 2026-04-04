@@ -209,7 +209,7 @@ if (require.main === module) {
     experienceYears: 4,
     region: 'LATAM',
     walletAddress: 'DaimaXx7vFakeWallet1111111111111111111111111',
-    lightningAddress: 'sofia@getalby.com',
+    lightningAddress: 'demo@getalby.com',
     savingsGoalMonthly: 500,
     currentSavings: 320,
     distributionRules: [
