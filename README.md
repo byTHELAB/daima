@@ -1,35 +1,48 @@
-# Daima — AI CFO for the Emerging Economies
+# Daima — AI agents that negotiate fair pay for workers and companies
 
-> *Daima: from the Quimbaya people of Colombia — master goldsmiths who understood the true value of what they crafted. Now, your AI agent knows the true value of your work.*
+> *Daima: from the Quimbaya people of Colombia — master goldsmiths who understood the true value of what they crafted. Now, AI agents that know the true value of work.*
 
-**We make paying fair easy and getting paid fair automatic.**
+**Negotiate fair. Get paid faster. Keep more.**
 
-CFOs used to cost $150K/year. We gave one to every remote worker in emerging economies.
+AI agents that represent both sides — workers and companies — to find fair agreements. No emotions, just data.
 
 ---
 
 ## The Problem
 
-Remote workers in LATAM, Africa, and Asia face a broken system:
+The system is broken for everyone:
 
-- **5-8% lost on every payment** — PayPal, Wise, and traditional rails eat $7,200/year from the average freelancer
-- **Charging 20-40% below market** — they don't know their global rate, and nobody tells them
+**For workers** in LATAM, Africa, and South Asia:
+- **5-8% lost on every payment** — PayPal, Wise, and traditional rails eat $7,200/year
+- **Charging 20-40% below market** — no one tells them what they're worth
 - **No financial strategy** — no CFO, no accountant, no one managing their money
-- **63% wait 30+ days to get paid** — and it's getting worse, not better
-- **Financially invisible** — they earn in USD but can't get credit, mortgages, or build financial history
+- **63% wait 30+ days to get paid** — and it's getting worse
 
-Every platform today (Deel, Remote, Papaya Global) built tools for the **employer**. Nobody built for the **worker**.
+**For companies** hiring remote talent:
+- **Compliance headaches** — international payments are slow, expensive, and legally complex
+- **Can't prove fair pay** — no way to verify they're paying within market range
+- **Talent retention suffers** — late payments and opaque processes push good workers away
+- **Information asymmetry** — companies don't know local market rates either
+
+Every platform today (Deel, Remote, Papaya Global) built tools for payroll compliance. Nobody built AI agents that represent both sides.
 
 ## The Solution
 
-**Daima** is your AI financial agent. It:
+**Daima** gives each side an AI agent that negotiates, pays, and protects:
 
-1. **Receives your payments** in digital dollars — instant, near-zero fees
+### For Workers
+1. **Receives payments** in digital dollars — instant, near-zero fees via Solana
 2. **Distributes automatically** based on your goals — savings, expenses, investments
-3. **Knows your market value** and defends it when companies lowball you
+3. **Knows your market value** and defends it when companies offer below market
 4. **Allocates savings to Bitcoin** via Lightning — your money holds its value
+5. **Autopilot or copilot** — let the agent handle negotiations, or review with AI suggestions
 
-For ethical companies: **Fair Pay Badge** — automated verification that you pay within market range. Employer branding that actually means something.
+### For Companies
+1. **AI agent finds talent** — post a brief, agent matches candidates by skill + rate + availability
+2. **Agent-to-agent negotiation** — your agent and the worker's agent find a fair rate automatically
+3. **Instant payments** — pay via MoonPay (fiat → USDC), arrives in < 30 seconds, fee < $0.01
+4. **Fair Pay Badge** — automated verification that you pay within market range (employer branding)
+5. **Agent handles the rest** — onboarding, recurring payments, milestone tracking, notifications
 
 ## Demo — 3 Magic Moments
 
