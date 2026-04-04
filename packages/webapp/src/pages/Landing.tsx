@@ -280,6 +280,45 @@ export default function Landing({ onNavigate }: Props) {
         </div>
       </section>
 
+      {/* ─── Waitlist ────────────────────────────────────────────────────── */}
+      <section className="px-6 py-24 bg-track">
+        <div className="max-w-xl mx-auto text-center">
+          <h2
+            className="text-[clamp(1.75rem,4vw,2.5rem)] font-black leading-tight mb-3"
+            style={{
+              background: 'linear-gradient(135deg, #FF6B55 0%, #FFCD38 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
+          >
+            Get early access
+          </h2>
+          <p className="text-subtle text-sm leading-relaxed mb-8">
+            Join the waitlist — be the first to try Daima when we launch.
+          </p>
+
+          <form name="waitlist" method="POST" data-netlify="true" className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+            <input type="hidden" name="form-name" value="waitlist" />
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              className="flex-1 px-5 py-4 rounded-2xl bg-card border border-border text-text text-sm font-medium outline-none focus:border-coral transition-all"
+            />
+            <button
+              type="submit"
+              className="px-8 py-4 rounded-2xl text-white font-bold text-sm whitespace-nowrap transition-all hover:scale-105 active:scale-95"
+              style={{ background: '#FF6B55', boxShadow: '0 8px 24px rgba(255,107,85,0.35)' }}
+            >
+              Join Waitlist →
+            </button>
+          </form>
+          <p className="text-subtle text-xs">No spam. We'll notify you when Daima is ready.</p>
+        </div>
+      </section>
+
       {/* ─── Bottom CTA ───────────────────────────────────────────────────── */}
       <section className="px-6 py-28 bg-bg text-center">
         <div className="max-w-2xl mx-auto">
