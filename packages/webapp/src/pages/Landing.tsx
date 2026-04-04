@@ -44,10 +44,10 @@ export default function Landing({ onNavigate }: Props) {
           }}
         />
 
-        {/* Agent badge */}
+        {/* Agent badge — tight to wordmark */}
         <div
-          className="relative mb-5 px-5 py-2 rounded-full text-sm font-semibold tracking-wide border"
-          style={{ borderColor: '#E0D8CC', color: '#8A7A6A', background: '#FFFFFF' }}
+          className="relative mb-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-widest uppercase border"
+          style={{ borderColor: '#E0D8CC', color: '#8A7A6A', background: 'transparent' }}
         >
           Agent ←→ Agent
         </div>
