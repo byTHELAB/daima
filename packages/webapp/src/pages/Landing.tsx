@@ -599,9 +599,18 @@ export default function Landing({ onNavigate }: Props) {
             <span className="px-3 py-1 rounded-full bg-card border border-border text-subtle text-xs">OWS Hackathon 2026</span>
           </div>
 
-          <p className="text-subtle text-sm italic leading-relaxed max-w-md mx-auto">
+          <p className="text-subtle text-sm italic leading-relaxed max-w-md mx-auto mb-8">
             {t.quimbaya}
           </p>
+
+          <a
+            href="https://x.com/daimapays"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-subtle text-sm font-medium hover:text-text transition-colors"
+          >
+            @daimapays
+          </a>
         </div>
       </section>
 
