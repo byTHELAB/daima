@@ -44,6 +44,14 @@ export default function Landing({ onNavigate }: Props) {
           }}
         />
 
+        {/* Agent badge */}
+        <div
+          className="relative mb-5 px-6 py-2.5 rounded-full text-sm font-bold text-white tracking-wide"
+          style={{ background: '#FF6B55', boxShadow: '0 4px 16px rgba(255,107,85,0.3)' }}
+        >
+          Agent ←→ Agent
+        </div>
+
         {/* Wordmark */}
         <h1
           className="relative text-[clamp(5rem,18vw,11rem)] font-black leading-none tracking-tight mb-6"
