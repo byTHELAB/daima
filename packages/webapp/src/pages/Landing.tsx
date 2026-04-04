@@ -170,19 +170,21 @@ export default function Landing({ onNavigate }: Props) {
       {/* ─── Top Bar ──────────────────────────────────────────────────────── */}
       <div className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-6 py-4">
         <span className="text-lg font-bold text-text tracking-tight">DAIMA</span>
-        <button
-          onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
-          className="text-sm font-semibold text-subtle hover:text-text transition-colors"
-        >
-          {lang === 'en' ? 'ES' : 'EN'}
-        </button>
-        <button
-          onClick={() => setShowWaitlist(true)}
-          className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:scale-105 active:scale-95 border"
-          style={{ borderColor: '#E0D8CC', color: '#1A1815', background: '#FFFFFF' }}
-        >
-          {t.getEarlyAccess}
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
+            className="text-xs text-subtle hover:text-text transition-colors"
+          >
+            {lang === 'en' ? 'ES' : 'EN'}
+          </button>
+          <button
+            onClick={() => setShowWaitlist(true)}
+            className="px-5 py-2.5 rounded-xl text-sm font-semibold transition-all hover:scale-105 active:scale-95 border"
+            style={{ borderColor: '#E0D8CC', color: '#1A1815', background: '#FFFFFF' }}
+          >
+            {t.getEarlyAccess}
+          </button>
+        </div>
       </div>
 
       {/* ─── Hero ─────────────────────────────────────────────────────────── */}
