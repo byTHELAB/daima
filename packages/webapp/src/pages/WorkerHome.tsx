@@ -243,7 +243,7 @@ export default function WorkerHome({ onNavigate, onBack }: Props) {
           <div>
             <p className="text-xs font-semibold mb-1" style={{ color: "#C04A1A" }}>Daima says</p>
             <p className="text-sm text-text leading-relaxed">
-              Your emergency fund is 65% complete. At your current savings rate, you'll reach your $3,000 goal by July. I moved $200 to BTC savings via Lightning — your purchasing power is growing. Keep it up! 🔥
+              Your emergency fund is 65% complete. At your current savings rate, you'll reach your $3,000 goal by July. I moved $200 to BTC savings via Lightning. Your purchasing power is growing. Keep it up! 🔥
             </p>
           </div>
         </div>
@@ -351,7 +351,7 @@ export default function WorkerHome({ onNavigate, onBack }: Props) {
         {/* ── Smart Habits ───────────────────────────────────── */}
         <div className="mb-6">
           <p className="text-xs font-semibold uppercase tracking-widest text-subtle mb-3">
-            Smart habits — powered by your agent
+            Smart habits, powered by your agent
           </p>
 
           <div className="flex flex-col gap-3">
@@ -450,7 +450,7 @@ export default function WorkerHome({ onNavigate, onBack }: Props) {
         </div>
 
         {/* ── Back to top ──────────────────────────────────── */}
-        <p className="text-center text-xs text-subtle py-4">Daima — your AI financial ally</p>
+        <p className="text-center text-xs text-subtle py-4">Daima. Your AI financial ally.</p>
 
       </div>
     </div>

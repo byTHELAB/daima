@@ -183,7 +183,7 @@ export default function WorkerDashboard({ payment, offerIntent = 'none', onBack 
         >
           <div className="p-4">
             <p className="text-xs font-semibold uppercase tracking-widest mb-1" style={{ color: '#8A6A00' }}>
-              ⚡ New offer — below market
+              ⚡ New offer: below market
             </p>
             <p className="text-text text-sm font-medium mb-1">
               Startup XYZ offers $300 for a UX redesign project.
@@ -295,7 +295,7 @@ export default function WorkerDashboard({ payment, offerIntent = 'none', onBack 
                     <p className="text-xs mt-2" style={{ color: '#0A7A54' }}>✓ Within market range</p>
                   )}
                   {parseInt(customCounter) > 650 && (
-                    <p className="text-xs mt-2" style={{ color: '#8A6A00' }}>⚠ Above market range — may reduce acceptance</p>
+                    <p className="text-xs mt-2" style={{ color: '#8A6A00' }}>⚠ Above market range. May reduce acceptance.</p>
                   )}
                 </div>
 
@@ -477,7 +477,7 @@ export default function WorkerDashboard({ payment, offerIntent = 'none', onBack 
           >
             <div className="p-4">
               <p className="text-sm italic text-subtle leading-relaxed">
-                You saved $19.24 in fees compared to PayPal this month. Your savings are growing — you're on track to reach your emergency fund goal by August.
+                You saved $19.24 in fees compared to PayPal this month. Your savings are growing. You're on track to reach your emergency fund goal by August.
               </p>
             </div>
           </div>

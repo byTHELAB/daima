@@ -60,11 +60,11 @@ export default function CompanyConfirmation({ payment, onBack }: Props) {
             </div>
             <div className="flex items-center gap-3 transition-all duration-300" style={{ opacity: step >= 3 ? 1 : 0.3 }}>
               <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: step >= 3 ? '#2DD4A0' : '#EDE8E0', color: step >= 3 ? '#0A0A0A' : '#8A7A6A' }}>✓</span>
-              <span className="text-sm text-text font-medium">Fair Pay Badge — verified & active</span>
+              <span className="text-sm text-text font-medium">Fair Pay Badge: verified and active</span>
             </div>
             <div className="flex items-center gap-3 transition-all duration-300" style={{ opacity: step >= 4 ? 1 : 0.3 }}>
               <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold" style={{ background: step >= 4 ? '#2DD4A0' : '#EDE8E0', color: step >= 4 ? '#0A0A0A' : '#8A7A6A' }}>✓</span>
-              <span className="text-sm text-text font-medium">Monthly payments — auto-scheduled</span>
+              <span className="text-sm text-text font-medium">Monthly payments, auto-scheduled</span>
             </div>
           </div>
         </div>
@@ -150,7 +150,7 @@ export default function CompanyConfirmation({ payment, onBack }: Props) {
             </button>
 
             <p className="text-center text-xs text-subtle">
-              Daima — your AI financial ally
+              Daima. Your AI financial ally.
             </p>
           </div>
         )}

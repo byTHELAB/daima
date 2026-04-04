@@ -165,25 +165,25 @@ export default function CompanyDashboard({ onPaymentSent, onBack }: CompanyDashb
                 {negotiationStep >= 2 && (
                   <div className="flex items-start gap-2 text-sm" style={{ animation: 'fadeSlideIn 0.3s ease-out' }}>
                     <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs shrink-0 mt-0.5" style={{ background: '#FF6B55', color: '#FFF5F0' }}>W</span>
-                    <span className="text-subtle">Worker counters <strong className="text-text">$550/hr</strong> — cites market data ($450-650 range)</span>
+                    <span className="text-subtle">Worker counters <strong className="text-text">$550/hr</strong>, citing market data ($450-650 range)</span>
                   </div>
                 )}
                 {negotiationStep >= 3 && (
                   <div className="flex items-start gap-2 text-sm" style={{ animation: 'fadeSlideIn 0.3s ease-out' }}>
                     <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs shrink-0 mt-0.5" style={{ background: '#3B5BDB', color: '#F5F0EB' }}>C</span>
-                    <span className="text-subtle">Company adjusts to <strong className="text-text">$480/hr</strong> — within budget, seeking Badge</span>
+                    <span className="text-subtle">Company adjusts to <strong className="text-text">$480/hr</strong>, within budget, seeking Badge</span>
                   </div>
                 )}
                 {negotiationStep >= 4 && (
                   <div className="flex items-start gap-2 text-sm" style={{ animation: 'fadeSlideIn 0.3s ease-out' }}>
                     <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs shrink-0 mt-0.5" style={{ background: '#FF6B55', color: '#FFF5F0' }}>W</span>
-                    <span className="text-subtle">Worker accepts <strong className="text-text">$500/hr</strong> — median market, above minimum</span>
+                    <span className="text-subtle">Worker accepts <strong className="text-text">$500/hr</strong>. Median market, above minimum.</span>
                   </div>
                 )}
                 {negotiationStep >= 5 && (
                   <div className="flex items-start gap-2 text-sm" style={{ animation: 'fadeSlideIn 0.3s ease-out' }}>
                     <span className="w-5 h-5 rounded-full flex items-center justify-center text-xs shrink-0 mt-0.5" style={{ background: '#0A7A54', color: '#FFF' }}>✓</span>
-                    <span style={{ color: '#0A7A54' }} className="font-semibold">Agreement: $500/hr — Fair Pay Badge verified</span>
+                    <span style={{ color: '#0A7A54' }} className="font-semibold">Agreement: $500/hr. Fair Pay Badge verified.</span>
                   </div>
                 )}
                 {negotiationStep < 5 && (

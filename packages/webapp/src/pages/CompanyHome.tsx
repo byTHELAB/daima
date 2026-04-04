@@ -117,7 +117,7 @@ export default function CompanyHome({ onNavigate, onBack }: Props) {
               🤖
             </div>
             <div>
-              <p className="font-bold text-text text-sm">Company Agent — Auto-configured</p>
+              <p className="font-bold text-text text-sm">Company Agent, auto-configured</p>
               <p className="text-subtle text-xs mt-0.5">
                 We analyzed acmecorp.com and set up your company profile:
               </p>
@@ -244,7 +244,7 @@ export default function CompanyHome({ onNavigate, onBack }: Props) {
               ★
             </div>
             <div className="flex-1 min-w-0">
-              <p className="font-bold text-text text-sm">Fair Pay Badge — Verified</p>
+              <p className="font-bold text-text text-sm">Fair Pay Badge: Verified</p>
               <p className="text-subtle text-xs mt-1 leading-relaxed">
                 All payments within market range. Your badge is active and visible to talent.
               </p>

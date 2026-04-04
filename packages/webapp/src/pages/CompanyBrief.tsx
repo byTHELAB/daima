@@ -48,7 +48,7 @@ export default function CompanyBrief({ onStartNegotiation, onBack }: Props) {
             <span>Back</span>
           </button>
           <h1 className="text-2xl font-bold text-text tracking-tight">New Project</h1>
-          <p className="text-subtle text-sm">Tell us what you need — your agent handles the rest</p>
+          <p className="text-subtle text-sm">Tell us what you need. Your agent handles the rest.</p>
         </div>
 
         {/* Brief Form */}
@@ -126,7 +126,7 @@ export default function CompanyBrief({ onStartNegotiation, onBack }: Props) {
               </div>
               {/* Market context */}
               <p className="text-xs mt-1" style={{ color: '#0A7A54' }}>
-                ✓ Market rate for {role}: $42–65/hr — your budget is within range
+                ✓ Market rate for {role}: $42–65/hr. Your budget is within range.
               </p>
             </div>
 
