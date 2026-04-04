@@ -73,11 +73,32 @@ Options:
 
 | Layer | Technology | Purpose |
 |-------|-----------|---------|
-| **Wallets** | Open Wallet Standard (OWS) | Multi-chain wallet management |
-| **Payments** | Solana + USDC | Fast, cheap payment rails |
-| **Savings** | Bitcoin + Lightning (LNbits) | Store of value + instant transfers |
+| **Key Management** | Open Wallet Standard (OWS) | Secure multi-chain wallets for AI agents — keys encrypted locally, never exposed |
+| **Payments** | Solana + USDC | Fast, cheap payment rails (< $0.01 fee) |
+| **Savings** | Bitcoin + Lightning (LNbits) | Store of value + instant BTC transfers |
+| **Onramp** | MoonPay | Fiat → USDC (zero fees for stablecoins) |
 | **AI Agent** | MiniMax M2.5 | Financial intelligence + negotiation |
-| **Onramp** | MoonPay (sandbox) | Fiat → digital dollars |
+| **Policy Engine** | OWS Policies | Spending limits, chain allowlists — agent can't overspend |
+
+## OWS Integration
+
+Daima uses the [Open Wallet Standard](https://openwallet.sh/) as the secure foundation for all wallet operations:
+
+```bash
+# Create a worker wallet (multi-chain: Solana + Bitcoin + Ethereum)
+ows wallet create --name daniela-reyes
+
+# Set spending policy — agent can distribute up to $500/day
+ows policy create --wallet daniela-reyes --chain solana --limit 500
+
+# Agent signs a USDC transfer (key never exposed to the agent)
+ows sign tx --wallet daniela-reyes --chain solana --tx <base64>
+
+# Create API key for the AI agent to authenticate
+ows key create --wallet daniela-reyes
+```
+
+**Why OWS?** Traditional wallets expose private keys to the application. OWS keeps keys encrypted in `~/.ows/` and enforces policies before signing. The AI agent can manage finances without ever touching the keys — perfect for an autonomous financial ally.
 
 ## Architecture
 

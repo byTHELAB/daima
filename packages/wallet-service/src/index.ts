@@ -1,7 +1,15 @@
 // ─── Daima Wallet Service — Main Entry Point ─────────────────────────────────
-// WalletService wraps SolanaService + LightningService and provides
-// a unified API for Daima's AI CFO to manage multi-chain worker wallets.
+// WalletService wraps OWS + SolanaService + LightningService and provides
+// a unified API for Daima's AI agents to manage multi-chain worker wallets.
+//
+// Architecture:
+//   OWS (Open Wallet Standard) → secure key management + policy engine
+//   SolanaService → USDC transactions on Solana
+//   LightningService → BTC payments via Lightning Network (LNbits)
+//
+// The AI agent NEVER touches private keys — OWS handles all signing.
 
+import { OWSService } from './ows';
 import { SolanaService } from './solana';
 import { LightningService } from './lightning';
 import {
@@ -15,6 +23,7 @@ import {
 
 // ─── Re-exports (consumers can import types directly from this package) ────────
 export * from './types';
+export { OWSService } from './ows';
 export { SolanaService } from './solana';
 export { LightningService } from './lightning';
 
@@ -33,12 +42,14 @@ const walletStore = new Map<string, Wallet & { _solanaSecretKey: string }>();
 // ─── WalletService ───────────────────────────────────────────────────────────
 
 export class WalletService {
+  readonly ows: OWSService;
   private readonly solana: SolanaService;
   private readonly lightning: LightningService;
   private readonly paymentCallbacks: PaymentReceivedCallback[] = [];
   private readonly conversionRate: ConversionRate;
 
   constructor() {
+    this.ows = new OWSService();
     this.solana = new SolanaService();
     this.lightning = new LightningService();
     this.conversionRate = {
@@ -46,7 +57,7 @@ export class WalletService {
       updatedAt: new Date(),
     };
 
-    console.log('[WalletService] Initialized — Solana + Lightning ready');
+    console.log('[WalletService] Initialized — OWS + Solana + Lightning ready');
   }
 
   // ─── createWorkerWallet ─────────────────────────────────────────────────────
