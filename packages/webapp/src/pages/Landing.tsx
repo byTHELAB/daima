@@ -31,8 +31,8 @@ export default function Landing({ onNavigate }: Props) {
         </h1>
 
         {/* Tagline */}
-        <p className="relative text-[clamp(1.25rem,3vw,1.75rem)] font-semibold text-text mb-3 tracking-tight">
-          Your AI financial ally.
+        <p className="relative text-[clamp(1rem,2.5vw,1.4rem)] font-semibold text-text mb-3 tracking-tight max-w-lg">
+          AI agents that negotiate fair pay for workers and companies.
         </p>
 
         {/* One-liner */}
