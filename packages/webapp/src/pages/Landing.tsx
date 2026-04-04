@@ -173,9 +173,9 @@ export default function Landing({ onNavigate }: Props) {
         <div className="flex items-center gap-3">
           <button
             onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
-            className="text-xs text-subtle hover:text-text transition-colors"
+            className="text-xs text-subtle hover:text-text transition-colors flex items-center gap-1"
           >
-            {lang === 'en' ? 'ES' : 'EN'}
+            🌐 {lang === 'en' ? 'ES' : 'EN'}
           </button>
           <button
             onClick={() => setShowWaitlist(true)}
